@@ -3,11 +3,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Navbar } from '@/components/Navbar'
-import { Button } from '@/components/ui/Button'
-import { LevelCard } from '@/components/LevelCard'
+import { Navbar } from '@/components/navbar'
+import { Button } from '@/components/ui/button'
+import { LevelCard } from '@/components/level-card'
 import { LEVELS } from '@/data/levels'
-import { ArrowRight, BookOpen, Zap, Target } from 'lucide-react'
+import { ArrowRight, BookOpen, Zap } from 'lucide-react'
 
 export default function Home() {
   return (

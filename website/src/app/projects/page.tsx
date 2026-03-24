@@ -3,11 +3,10 @@
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MainLayout } from '@/components/MainLayout'
-import { Breadcrumb } from '@/components/Breadcrumb'
-import { ProjectCard } from '@/components/ProjectCard'
+import { MainLayout } from '@/components/main-layout'
+import { Breadcrumb } from '@/components/breadcrumb'
+import { ProjectCard } from '@/components/project-card'
 import { PROJECTS } from '@/data/projects'
-import { LEVELS } from '@/data/levels'
 import { Search, X } from 'lucide-react'
 
 export default function ProjectsPage() {

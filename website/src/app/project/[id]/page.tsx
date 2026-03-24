@@ -3,12 +3,12 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MainLayout } from '@/components/MainLayout'
-import { Breadcrumb } from '@/components/Breadcrumb'
+import { MainLayout } from '@/components/main-layout'
+import { Breadcrumb } from '@/components/breadcrumb'
 import { PROJECTS } from '@/data/projects'
 import { LEVELS } from '@/data/levels'
 import { notFound } from 'next/navigation'
-import { Badge } from '@/components/ui/Badge'
+import { Badge } from '@/components/ui/badge'
 import { ExternalLink, Github } from 'lucide-react'
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
@@ -18,9 +18,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     notFound()
   }
 
-  const levels = Array.isArray(project.level)
-    ? LEVELS.filter(l => project.level.includes(l.id))
-    : LEVELS.filter(l => l.id === project.level)
+  const projectLevelIds = Array.isArray(project.level) ? project.level : [project.level]
+  const levels = LEVELS.filter(l => projectLevelIds.includes(l.id))
 
   return (
     <MainLayout>
@@ -214,12 +213,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         >
           <h2 className="text-2xl font-bold mb-4">Related Projects</h2>
           <div className="grid md:grid-cols-3 gap-4">
-            {PROJECTS.filter(p =>
-              p.id !== project.id &&
-              ((Array.isArray(p.level) && Array.isArray(project.level) &&
-                p.level.some(l => project.level.includes(l))) ||
-                p.level === project.level)
-            )
+            {PROJECTS.filter(p => {
+              if (p.id === project.id) return false
+              const candidateLevels = Array.isArray(p.level) ? p.level : [p.level]
+              return candidateLevels.some(levelId => projectLevelIds.includes(levelId))
+            })
               .slice(0, 3)
               .map((p) => (
                 <Link key={p.id} href={`/project/${p.id}`} className="p-4 rounded-lg border border-border hover:border-accent hover:bg-accent/10 transition-all">
