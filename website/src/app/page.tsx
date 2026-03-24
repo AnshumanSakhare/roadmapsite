@@ -28,9 +28,9 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Master Generative AI in{' '}
+            Master Generative AI at{' '}
             <span className="bg-gradient-to-r from-accent to-violet-600 bg-clip-text text-transparent">
-              24-35 Weeks
+              Your Own Pace
             </span>
           </h1>
 

@@ -217,7 +217,7 @@ export default function DocsPage() {
             {[
               {
                 q: 'How long will it take to complete the roadmap?',
-                a: '24-35 weeks with 10-15 hours per week of dedicated study. You can go faster or slower depending on your pace.'
+                a: 'The roadmap is self-paced. Most learners make steady progress with consistent weekly study, and you can go faster or slower based on your schedule.'
               },
               {
                 q: 'Do I need prior machine learning experience?',

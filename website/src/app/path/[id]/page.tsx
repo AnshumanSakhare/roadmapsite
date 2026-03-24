@@ -82,7 +82,7 @@ export default function PathPage({ params }: { params: { id: string } }) {
             {[
               { label: 'All of Levels 0-5', desc: 'Complete foundation and advanced skills' },
               { label: '130+ Projects', desc: 'Hands-on experience building AI apps' },
-              { label: '24-35 weeks', desc: 'Or equivalent self-study experience' },
+              { label: 'Consistent Practice', desc: 'Or equivalent self-study experience' },
               { label: 'Python Proficiency', desc: 'Strong Python programming skills' }
             ].map((prereq, index) => (
               <div key={index} className="p-4 rounded-lg bg-muted/50 border border-border/50">
@@ -235,7 +235,7 @@ export default function PathPage({ params }: { params: { id: string } }) {
 
           <div className="space-y-4">
             {[
-              { step: 1, title: 'Complete Levels 0-5', desc: 'Master core GenAI concepts and skills (24-35 weeks)' },
+              { step: 1, title: 'Complete Levels 0-5', desc: 'Master core GenAI concepts and skills at a sustainable pace' },
               { step: 2, title: 'Review This Specialization', desc: 'Understand skills, projects, and career goals' },
               { step: 3, title: 'Start Project 1', desc: 'Begin the first specialization project' },
               { step: 4, title: 'Build & Share', desc: 'Complete all 4 projects and build your portfolio' },

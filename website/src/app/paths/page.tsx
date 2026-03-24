@@ -168,7 +168,7 @@ export default function PathsPage() {
         >
           <h2 className="text-4xl font-bold mb-4">Ready to Specialize?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Start your learning journey from Level 0, and you'll reach specialization in 24-35 weeks of focused study.
+            Start your learning journey from Level 0, and move toward specialization with consistent focused study.
           </p>
           <Link
             href="/roadmap"

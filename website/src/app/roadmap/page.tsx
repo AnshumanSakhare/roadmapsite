@@ -34,7 +34,7 @@ export default function RoadmapPage() {
           className="grid md:grid-cols-4 gap-4 p-6 rounded-xl border border-border bg-card/50 backdrop-blur-md"
         >
           {[
-            { label: 'Total Duration', value: '24-35 weeks' },
+            { label: 'Learning Pace', value: 'Self-paced' },
             { label: 'Time per Week', value: '10-15 hours' },
             { label: 'Total Projects', value: '130+' },
             { label: 'Checkpoints', value: '28' }
