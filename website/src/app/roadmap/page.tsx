@@ -3,8 +3,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MainLayout } from '@/components/main-layout'
-import { Breadcrumb } from '@/components/breadcrumb'
+import { MainLayout } from '@/components/MainLayout'
+import { Breadcrumb } from '@/components/Breadcrumb'
 import { LEVELS } from '@/data/levels'
 import { ArrowRight } from 'lucide-react'
 

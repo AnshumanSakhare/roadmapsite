@@ -3,12 +3,12 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MainLayout } from '@/components/main-layout'
-import { Breadcrumb } from '@/components/breadcrumb'
+import { MainLayout } from '@/components/MainLayout'
+import { Breadcrumb } from '@/components/Breadcrumb'
 import { PROJECTS } from '@/data/projects'
 import { LEVELS } from '@/data/levels'
 import { notFound } from 'next/navigation'
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components/ui/Badge'
 import { ExternalLink, Github } from 'lucide-react'
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
