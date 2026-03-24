@@ -3,9 +3,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MainLayout } from '@/components/MainLayout'
-import { Breadcrumb } from '@/components/Breadcrumb'
-import { PathCard } from '@/components/PathCard'
+import { MainLayout } from '@/components/main-layout'
+import { Breadcrumb } from '@/components/breadcrumb'
+import { PathCard } from '@/components/path-card'
 import { SPECIALIZATION_PATHS } from '@/data/paths'
 
 export default function PathsPage() {
