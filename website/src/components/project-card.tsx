@@ -34,10 +34,10 @@ export function ProjectCard({
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="p-5 rounded-lg backdrop-blur-md border border-border bg-card/60 hover:bg-card cursor-pointer transition-all group"
+      className="p-5 rounded-lg border border-gray-200 bg-white hover:border-orange-200 hover:shadow-md hover:shadow-orange-100/30 cursor-pointer transition-all group"
     >
       <div className="flex items-start justify-between mb-3">
-        <h3 className="text-base font-semibold line-clamp-2 group-hover:text-accent transition-colors">
+        <h3 className="text-base font-semibold line-clamp-2 group-hover:text-orange-600 transition-colors text-gray-900">
           {name}
         </h3>
         <div className={`px-2 py-1 rounded text-xs font-medium whitespace-nowrap ml-2 ${statusColors[status as keyof typeof statusColors]}`}>
@@ -45,15 +45,15 @@ export function ProjectCard({
         </div>
       </div>
 
-      <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+      <p className="text-sm text-gray-600 mb-3 line-clamp-2">
         {description}
       </p>
 
       <div className="flex flex-wrap gap-2 mb-2">
-        <Badge variant="secondary" className="text-xs">
+        <Badge variant="secondary" className="text-xs bg-orange-100 text-orange-700 hover:bg-orange-200">
           {difficulty}
         </Badge>
-        <Badge variant="outline" className="text-xs">
+        <Badge variant="outline" className="text-xs border-gray-300">
           Level {Array.isArray(level) ? level[0] : level}
         </Badge>
       </div>
@@ -62,13 +62,13 @@ export function ProjectCard({
         {tags.slice(0, 3).map((tag, index) => (
           <span
             key={index}
-            className="text-xs px-2 py-1 rounded bg-muted/50 text-muted-foreground"
+            className="text-xs px-2 py-1 rounded bg-gray-100 text-gray-700"
           >
             #{tag}
           </span>
         ))}
         {tags.length > 3 && (
-          <span className="text-xs px-2 py-1 text-muted-foreground">
+          <span className="text-xs px-2 py-1 text-gray-600">
             +{tags.length - 3}
           </span>
         )}

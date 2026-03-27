@@ -75,15 +75,15 @@ export default function ProjectsPage() {
     <MainLayout>
       <div className="px-6 py-8 space-y-8">
         {/* Breadcrumb */}
-        <Breadcrumb items={[{ label: 'Projects' }]} />
+        <Breadcrumb items={[{ label: 'Resources' }]} />
 
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-5xl font-bold mb-4">130+ Projects</h1>
-          <p className="text-xl text-muted-foreground">
+          <h1 className="text-5xl font-bold mb-4 text-gray-900">130+ Projects</h1>
+          <p className="text-xl text-gray-600">
             Real-world projects spanning all levels, from foundations to specializations.
           </p>
         </motion.div>
@@ -97,13 +97,13 @@ export default function ProjectsPage() {
         >
           {/* Search */}
           <div className="relative">
-            <Search className="absolute left-4 top-3.5 w-5 h-5 text-muted-foreground" />
+            <Search className="absolute left-4 top-3.5 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search projects, tags, technologies..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-lg border border-border bg-card/50 backdrop-blur-md focus:outline-none focus:border-accent transition-colors"
+              className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 bg-white focus:outline-none focus:border-orange-600 transition-colors"
             />
           </div>
 
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
           <div className="space-y-3">
             {['Level', 'Difficulty', 'Status'].map((category) => (
               <div key={category}>
-                <h3 className="text-sm font-semibold text-muted-foreground mb-2">{category}</h3>
+                <h3 className="text-sm font-semibold text-gray-700 mb-2">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {filters
                     .filter(f => f.category === category)
@@ -121,8 +121,8 @@ export default function ProjectsPage() {
                         onClick={() => toggleFilter(filter.id)}
                         className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
                           selectedFilters.includes(filter.id)
-                            ? 'bg-accent text-accent-foreground'
-                            : 'bg-muted hover:bg-muted/80 text-foreground'
+                            ? 'bg-orange-600 text-white'
+                            : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
                         }`}
                       >
                         {filter.label}
@@ -140,14 +140,14 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="flex flex-wrap gap-2 p-3 rounded-lg bg-accent/10 border border-accent/30"
+                className="flex flex-wrap gap-2 p-3 rounded-lg bg-orange-50 border border-orange-200"
               >
-                <span className="text-xs text-muted-foreground self-center">Active filters:</span>
+                <span className="text-xs text-gray-600 self-center">Active filters:</span>
                 {selectedFilters.map((filter) => (
                   <button
                     key={filter}
                     onClick={() => toggleFilter(filter)}
-                    className="flex items-center gap-1 px-2 py-1 rounded bg-accent/20 text-accent text-xs font-medium hover:bg-accent/30 transition-colors"
+                    className="flex items-center gap-1 px-2 py-1 rounded bg-orange-100 text-orange-700 text-xs font-medium hover:bg-orange-200 transition-colors"
                   >
                     {filters.find(f => f.id === filter)?.label}
                     <X className="w-3 h-3" />

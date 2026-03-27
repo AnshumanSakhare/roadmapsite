@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Menu, X, BookOpen } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,19 +15,16 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-violet-600 flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-lg">GenAI Roadmap</span>
+            <Image src="/icon.svg" alt="Build Fast with AI" width={40} height={40} className="h-8 w-auto" priority />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {[
               { href: '/roadmap', label: 'Roadmap' },
-              { href: '/projects', label: 'Projects' },
-              { href: '/paths', label: 'Paths' },
-              { href: '/docs', label: 'Docs' },
+              { href: '/projects', label: 'Resources' },
+              { href: '/paths', label: 'Career Paths' },
+              { href: '/docs', label: 'Documentation' },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -42,9 +40,9 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/roadmap"
-              className="px-4 py-2 rounded-lg bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-colors"
+              className="px-4 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-medium transition-colors"
             >
-              Start Learning
+              Get Started
             </Link>
           </div>
 
@@ -72,9 +70,9 @@ export function Navbar() {
             <div className="px-6 py-4 space-y-3">
               {[
                 { href: '/roadmap', label: 'Roadmap' },
-                { href: '/projects', label: 'Projects' },
-                { href: '/paths', label: 'Paths' },
-                { href: '/docs', label: 'Docs' },
+                { href: '/projects', label: 'Resources' },
+                { href: '/paths', label: 'Career Paths' },
+                { href: '/docs', label: 'Documentation' },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -87,10 +85,10 @@ export function Navbar() {
               ))}
               <Link
                 href="/roadmap"
-                className="block px-3 py-2 rounded-lg bg-accent text-accent-foreground font-medium hover:bg-accent/90 transition-colors"
+                className="block px-3 py-2 rounded-lg bg-orange-600 text-white font-medium hover:bg-orange-700 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Start Learning
+                Get Started
               </Link>
             </div>
           </motion.div>

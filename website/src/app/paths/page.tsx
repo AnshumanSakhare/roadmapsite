@@ -20,8 +20,8 @@ export default function PathsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-5xl font-bold mb-4">Choose Your Specialization</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
+          <h1 className="text-5xl font-bold mb-4 text-gray-900">Choose Your Specialization</h1>
+          <p className="text-xl text-gray-600 max-w-3xl">
             After completing Level 5, choose one of four specialization paths aligned with your career goals. Each path includes deep expertise, 4 specialized projects, and clear career progression.
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export default function PathsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-16 space-y-12"
         >
-          <h2 className="text-4xl font-bold">Deep Dive Into Each Path</h2>
+          <h2 className="text-4xl font-bold text-gray-900">Deep Dive Into Each Path</h2>
 
           {SPECIALIZATION_PATHS.map((path, index) => (
             <motion.div
@@ -64,15 +64,15 @@ export default function PathsPage() {
               className="grid md:grid-cols-2 gap-8 items-center"
             >
               <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                <h3 className="text-3xl font-bold mb-4">{path.title}</h3>
-                <p className="text-lg text-muted-foreground mb-6">{path.description}</p>
+                <h3 className="text-3xl font-bold mb-4 text-gray-900">{path.title}</h3>
+                <p className="text-lg text-gray-600 mb-6">{path.description}</p>
 
                 <div className="space-y-4 mb-6">
-                  <h4 className="font-semibold">Core Skills You'll Master:</h4>
+                  <h4 className="font-semibold text-gray-900">Core Skills You'll Master:</h4>
                   <ul className="space-y-2">
                     {path.skills.map((skill, i) => (
-                      <li key={i} className="flex gap-3">
-                        <span className="text-accent font-bold">✓</span>
+                      <li key={i} className="flex gap-3 text-gray-700">
+                        <span className="text-orange-600 font-bold">✓</span>
                         <span>{skill}</span>
                       </li>
                     ))}
@@ -80,10 +80,10 @@ export default function PathsPage() {
                 </div>
 
                 <div className="space-y-4 mb-6">
-                  <h4 className="font-semibold">Specialization Projects:</h4>
+                  <h4 className="font-semibold text-gray-900">Specialization Projects:</h4>
                   <ul className="space-y-2">
                     {path.projects.map((project, i) => (
-                      <li key={i} className="text-sm text-muted-foreground pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                      <li key={i} className="text-sm text-gray-600 pl-6 relative before:content-['→'] before:absolute before:left-0 before:text-orange-600">
                         {project.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                       </li>
                     ))}
@@ -91,13 +91,13 @@ export default function PathsPage() {
                 </div>
 
                 <div className="mb-6">
-                  <div className="text-sm text-muted-foreground mb-1">Expected Career Role:</div>
-                  <div className="text-lg font-semibold">{path.targetRole}</div>
+                  <div className="text-sm text-gray-600 mb-1">Expected Career Role:</div>
+                  <div className="text-lg font-semibold text-gray-900">{path.targetRole}</div>
                 </div>
 
                 <Link
                   href={`/path/${path.id}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-accent-foreground font-medium hover:bg-accent/90 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-orange-600 text-white font-medium hover:bg-orange-700 transition-colors"
                 >
                   Learn More →
                 </Link>

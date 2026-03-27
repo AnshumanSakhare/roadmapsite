@@ -38,8 +38,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           <div className="mb-4">
             <Badge className="mb-3">{project.status}</Badge>
           </div>
-          <h1 className="text-5xl font-bold mb-4">{project.name}</h1>
-          <p className="text-xl text-muted-foreground">{project.description}</p>
+          <h1 className="text-5xl font-bold mb-4 text-gray-900">{project.name}</h1>
+          <p className="text-xl text-gray-600">{project.description}</p>
         </motion.div>
 
         {/* Project Meta */}
@@ -58,9 +58,9 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             },
             { label: 'Status', value: project.status }
           ].map((meta, index) => (
-            <div key={index} className="p-4 rounded-lg border border-border bg-card/50 backdrop-blur-md">
-              <div className="text-sm text-muted-foreground mb-1">{meta.label}</div>
-              <div className="font-semibold">{meta.value}</div>
+            <div key={index} className="p-4 rounded-lg border border-gray-200 bg-white">
+              <div className="text-sm text-gray-600 mb-1">{meta.label}</div>
+              <div className="font-semibold text-gray-900">{meta.value}</div>
             </div>
           ))}
         </motion.div>
@@ -75,24 +75,24 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             className="md:col-span-2 space-y-8"
           >
             {/* Overview */}
-            <div className="p-8 rounded-xl border border-border bg-card/50 backdrop-blur-md">
-              <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+            <div className="p-8 rounded-xl border border-gray-200 bg-white">
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Project Overview</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 {project.description}
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 This project is part of the {project.category} category and is recommended for learners at{' '}
-                <span className="font-semibold text-foreground">
+                <span className="font-semibold text-gray-900">
                   {Array.isArray(project.level) ? `Levels ${project.level[0]}-${project.level[project.level.length - 1]}` :
                     `Level ${project.level}`}
                 </span>
-                . Expected difficulty: <span className="font-semibold text-foreground">{project.difficulty}</span>
+                . Expected difficulty: <span className="font-semibold text-gray-900">{project.difficulty}</span>
               </p>
             </div>
 
             {/* Learning Outcomes */}
-            <div className="p-8 rounded-xl border border-border bg-card/50 backdrop-blur-md">
-              <h2 className="text-2xl font-bold mb-6">What You'll Learn</h2>
+            <div className="p-8 rounded-xl border border-gray-200 bg-white">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">What You'll Learn</h2>
               <ul className="space-y-3">
                 {[
                   'How to', // This would be dynamic in a real app
@@ -102,16 +102,16 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                   'Production considerations'
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="text-accent font-bold">✓</span>
-                    <span>{item} related to {project.name.toLowerCase()}</span>
+                    <span className="text-orange-600 font-bold">✓</span>
+                    <span className="text-gray-700">{item} related to {project.name.toLowerCase()}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Tech Stack */}
-            <div className="p-8 rounded-xl border border-border bg-card/50 backdrop-blur-md">
-              <h2 className="text-2xl font-bold mb-4">Technologies & Topics</h2>
+            <div className="p-8 rounded-xl border border-gray-200 bg-white">
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Technologies & Topics</h2>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <Badge key={tag} variant="secondary">
@@ -130,13 +130,13 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             className="space-y-6"
           >
             {/* GitHub Link */}
-            <div className="p-6 rounded-xl border border-accent/30 bg-accent/5 backdrop-blur-md">
-              <h3 className="font-semibold mb-4">Get Started</h3>
+            <div className="p-6 rounded-xl border border-orange-200 bg-orange-50">
+              <h3 className="font-semibold mb-4 text-gray-900">Get Started</h3>
               <a
                 href={`https://github.com/buildfastwithai/gen-ai-experiments/tree/main/${project.folder}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full gap-2 px-4 py-3 rounded-lg bg-accent text-accent-foreground font-medium hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center justify-center w-full gap-2 px-4 py-3 rounded-lg bg-orange-600 text-white font-medium hover:bg-orange-700 transition-colors"
               >
                 <Github className="w-5 h-5" />
                 View on GitHub
@@ -145,52 +145,52 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             </div>
 
             {/* Related Levels */}
-            <div className="p-6 rounded-xl border border-border bg-card/50 backdrop-blur-md">
-              <h3 className="font-semibold mb-4">Related Levels</h3>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <h3 className="font-semibold mb-4 text-gray-900">Related Levels</h3>
               <div className="space-y-2">
                 {levels.map((level) => (
                   <Link
                     key={level.id}
                     href={`/level/${level.id}`}
-                    className="block p-3 rounded-lg border border-border hover:border-accent hover:bg-accent/10 transition-all"
+                    className="block p-3 rounded-lg border border-gray-200 hover:border-orange-200 hover:bg-orange-50 transition-all"
                   >
-                    <div className="font-medium text-sm">Level {level.id}</div>
-                    <div className="text-xs text-muted-foreground">{level.title}</div>
+                    <div className="font-medium text-sm text-gray-900">Level {level.id}</div>
+                    <div className="text-xs text-gray-600">{level.title}</div>
                   </Link>
                 ))}
               </div>
             </div>
 
             {/* Project Stats */}
-            <div className="p-6 rounded-xl border border-border bg-card/50 backdrop-blur-md">
-              <h3 className="font-semibold mb-4">Project Stats</h3>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <h3 className="font-semibold mb-4 text-gray-900">Project Stats</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Status:</span>
-                  <span className="font-medium">{project.status}</span>
+                  <span className="text-gray-600">Status:</span>
+                  <span className="font-medium text-gray-900">{project.status}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Difficulty:</span>
-                  <span className="font-medium">{project.difficulty}</span>
+                  <span className="text-gray-600">Difficulty:</span>
+                  <span className="font-medium text-gray-900">{project.difficulty}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Tags:</span>
-                  <span className="font-medium">{project.tags.length}</span>
+                  <span className="text-gray-600">Tags:</span>
+                  <span className="font-medium text-gray-900">{project.tags.length}</span>
                 </div>
               </div>
             </div>
 
             {/* Next Steps */}
-            <div className="p-6 rounded-xl border border-border bg-card/50 backdrop-blur-md">
-              <h3 className="font-semibold mb-4">Next Steps</h3>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <h3 className="font-semibold mb-4 text-gray-900">Next Steps</h3>
               <ol className="space-y-2 text-sm">
                 <li className="flex gap-3">
-                  <span className="text-accent font-bold">1</span>
-                  <span>Clone the repository</span>
+                  <span className="text-orange-600 font-bold">1</span>
+                  <span className="text-gray-700">Clone the repository</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-accent font-bold">2</span>
-                  <span>Follow the README</span>
+                  <span className="text-orange-600 font-bold">2</span>
+                  <span className="text-gray-700">Follow the README</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-accent font-bold">3</span>
